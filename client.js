@@ -1,5 +1,5 @@
 const io = require('socket.io-client');
-const CLIENT_COUNT = 1000;
+const CLIENT_COUNT = 10000;
 const PORT = 3000;
 
 for (let i = 0; i < CLIENT_COUNT; i++) {
@@ -9,7 +9,7 @@ let connected = new Set();
 let reconnecting = new Set();
 
 function newSocketClient(idx) {
-    let socket = io('http://127.0.0.1:' + PORT, {forceNew: true});
+    let socket = io('http://127.0.0.1:' + PORT, {forceNew: true, transports: ["websocket"]});
 
     socket.on('connect', function () {
         connected.add(idx);

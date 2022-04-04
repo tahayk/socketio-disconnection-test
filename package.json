@@ -6,11 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js 1",
+    "start-cluster": "node server-cluster.js",
     "start-client": "node client.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@socket.io/cluster-adapter": "^0.1.0",
+    "@socket.io/sticky": "^1.0.1",
     "express": "^4.17.3",
     "express-status-monitor": "github:tahayk/express-status-monitor#socket.io-v4",
     "forever": "^4.0.3",
